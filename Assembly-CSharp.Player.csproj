@@ -55,7 +55,8 @@
   <ItemGroup>
     <Compile Include="Assets\PersonMovement.cs" />
     <Compile Include="Assets\ControllingCameraAspectScript.cs" />
-    <Compile Include="Assets\DragAndAim.cs" />
+    <Compile Include="Assets\BirdController.cs" />
+    <Compile Include="Assets\DrawProjection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Kevin Iglesias\3DCharacterDummy\Readme.txt" />
