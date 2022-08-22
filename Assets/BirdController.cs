@@ -16,11 +16,11 @@ public class BirdController : MonoBehaviour
     Vector3 start, end, force;
 
     private int numOfTrajectoryPoints = 30;
-    private List<Vector3> trajectoryPoints = new List<Vector3>();
 
     LineRenderer lineRenderer;
 
     public float divideDragMagBy = 10;
+
 
     // Update is called once per frame
     void Start()
@@ -33,10 +33,12 @@ public class BirdController : MonoBehaviour
     {
         if (CreatePebble == null)
             isBallThrown = false;
+
         if (isBallThrown)
         {
             return;
         }
+
        if (Input.GetMouseButtonDown(0))
         {
             lineRenderer.enabled = true;
@@ -57,11 +59,17 @@ public class BirdController : MonoBehaviour
         if (isPressed)
         {
             //move bird--------------------------------------------------
-            float HorizontalRotation = Input.GetAxis("Horizontal");
-            float VerticalRotation = 0;
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles +
-                new Vector3(0, HorizontalRotation * rotationSpeed, VerticalRotation * rotationSpeed)
-                );
+            float HorizontalRotation = (Input.mousePosition.x - start.x)/10;
+
+            HorizontalRotation = Mathf.Clamp(HorizontalRotation, -15, 15);
+            var rot = transform.localEulerAngles;
+            rot.y = HorizontalRotation;
+            transform.localEulerAngles = rot;
+
+           // transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles +
+            //    new Vector3(0, HorizontalRotation, 0)
+            //    );
+
             //-----------------------------------------------------------
 
             //display linerenderer--------------------------------------------
@@ -84,7 +92,7 @@ public class BirdController : MonoBehaviour
     {
         CreatePebble.SetActive(true);
         CreatePebble.GetComponent<Rigidbody>().useGravity = true;
-        force = start - end;
+        force.y = start.y - end.y;
         float vel = Mathf.Sqrt((force.x * force.x) + (force.y * force.y));
         CreatePebble.GetComponent<Rigidbody>().velocity = (PebbleShootPoint.up) * (BlastPower+vel/divideDragMagBy);
 
@@ -102,13 +110,13 @@ public class BirdController : MonoBehaviour
     }
 
     void setTrajectoryPoints()
-    {
+    { 
         lineRenderer.positionCount = numOfTrajectoryPoints;
         List<Vector3> points = new List<Vector3>();
 
         Vector3 startingPosition =PebbleShootPoint.position;
 
-        force = start - Input.mousePosition;
+        force.y = start.y - Input.mousePosition.y;
         float vel = Mathf.Sqrt((force.x * force.x) + (force.y * force.y));
         Vector3 startingVelocity = (PebbleShootPoint.up) * (BlastPower + vel/divideDragMagBy);
 
