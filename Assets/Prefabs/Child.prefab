@@ -1029,6 +1029,7 @@ GameObject:
   - component: {fileID: 2615122321031285661}
   - component: {fileID: 2716256691261173051}
   - component: {fileID: 6351800663523864451}
+  - component: {fileID: 6053807873547954643}
   m_Layer: 0
   m_Name: C_man_1_FBX2013
   m_TagString: Untagged
@@ -1141,8 +1142,20 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.03225363, y: 0.030585801, z: 0.09807511}
-  m_Center: {x: 0.00049590174, y: 0.005084433, z: 0.048452094}
+  m_Size: {x: 0.0650842, y: 0.040498897, z: 0.11723673}
+  m_Center: {x: 0.0005951286, y: 0.010040993, z: 0.058032922}
+--- !u!114 &6053807873547954643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2620670662107736787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468bc272c07aec045b70518fa0e69815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2620692107740916577
 GameObject:
   m_ObjectHideFlags: 0

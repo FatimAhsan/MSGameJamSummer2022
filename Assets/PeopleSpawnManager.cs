@@ -16,7 +16,7 @@ public class PeopleSpawnManager : MonoBehaviour
 
     private void OnEnable()
     {
-       PersonMovement.OnPersonHit += SpawnNewPerson;
+       coll.OnPersonHit += SpawnNewPerson;
     }
 
     void SpawnNewPerson()

@@ -6,7 +6,7 @@ using DG.Tweening;
 public class PersonMovement : MonoBehaviour
 {
     public delegate void PersonHit();
-    public static event PersonHit OnPersonHit;
+    public static event PersonHit OnPersonHit;//from https://www.youtube.com/watch?v=NWNH9XRtuIc
 
     public float speed = 5;
     public GameObject MiddleOfScreen;
@@ -61,9 +61,7 @@ public class PersonMovement : MonoBehaviour
     {
         Debug.Log("collsion");
         if (collision.gameObject.layer == 6) { die(); }
-        else if(collision.gameObject.layer == 7) {
-            float yRot = transform.rotation.y;
-            this.transform.Rotate(0, -yRot, 0); }
+
     }
 
     public void die()
@@ -71,7 +69,7 @@ public class PersonMovement : MonoBehaviour
         GetComponent<Animator>().enabled = false;
         GetComponent<Collider>().enabled = false;
 
-        if (gameObject != null) { Destroy(gameObject, 3f); }
+        if (gameObject != null) { Destroy(gameObject, 0.1f); }
         if(OnPersonHit != null) { OnPersonHit(); }
     }
 }
