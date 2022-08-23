@@ -21,7 +21,8 @@ public class PeopleSpawnManager : MonoBehaviour
 
     void SpawnNewPerson()
     {
-        SpawnedPerson = (GameObject) Instantiate(PeoplePrefab, SpawnPoints[0].transform.position, Quaternion.identity);
+        int randomNumber = Mathf.RoundToInt(Random.Range(0f, SpawnPoints.Length - 1));
+        SpawnedPerson = (GameObject) Instantiate(PeoplePrefab, SpawnPoints[randomNumber].transform.position, SpawnPoints[randomNumber].transform.rotation);
 
     }
 }
