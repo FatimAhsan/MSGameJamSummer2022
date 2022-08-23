@@ -11,7 +11,8 @@ public class PeopleSpawnManager : MonoBehaviour
 
     void Start()
     {
-        SpawnNewPerson();
+        for (int i = 0; i < 3; i++)
+        { SpawnNewPerson(); }
     }
 
     private void OnEnable()

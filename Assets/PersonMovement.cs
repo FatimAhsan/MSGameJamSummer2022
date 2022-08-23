@@ -16,6 +16,7 @@ public class PersonMovement : MonoBehaviour
     private Sequence sequenceEnter;
     //bool isHit = false;
     private Vector3 StartPosition;
+    public LayerMask CollideableLayers;//physics layer that will cause the line to stop being drawn
 
     // Start is called before the first frame update
     void Start()
@@ -57,7 +58,7 @@ public class PersonMovement : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    /*void OnCollisionEnter(Collision collision)
     {
         Debug.Log("collsion");
         if (collision.gameObject.layer == 6) { die(); }
@@ -71,7 +72,7 @@ public class PersonMovement : MonoBehaviour
 
         if (gameObject != null) { Destroy(gameObject, 0.1f); }
         if(OnPersonHit != null) { OnPersonHit(); }
-    }
+    }*/
 }
 
 
