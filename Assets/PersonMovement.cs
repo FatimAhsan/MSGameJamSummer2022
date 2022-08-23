@@ -5,9 +5,12 @@ using DG.Tweening;
 
 public class PersonMovement : MonoBehaviour
 {
+    public delegate void PersonHit();
+    public static event PersonHit OnPersonHit;
+
+    public GameObject MiddleOfScreen;
+
     [SerializeField] private Animator _animator;
-    [SerializeField] private Transform startPoint;
-    [SerializeField] private Transform endPoint;
 
     private Sequence sequenceEnter;
     bool isHit = false;
@@ -22,30 +25,46 @@ public class PersonMovement : MonoBehaviour
     {
         if (!isHit)
         {
-            if (transform.position == startPoint.position)
+            if (transform.rotation.y == 0)
                 moveRightOrLeft(1);
-            else if (transform.position == endPoint.position)
+            else if (transform.rotation.y == 180)
                 moveRightOrLeft(0);
         }
     }
     private void moveRightOrLeft(int RightorLeft)
     {
         sequenceEnter?.Kill();
+        Vector3 pos = transform.position;
 
         if (RightorLeft == 1)
         {
-            transform.position = startPoint.position;
-            transform.rotation = startPoint.rotation;
+            pos.x++;
             sequenceEnter = DOTween.Sequence()
-              .Join(transform.DOMove(endPoint.position, 3f));
+              .Join(transform.DOMove(pos, 1f));
         }
         else
         {
-            transform.position = endPoint.position;
-            transform.rotation = endPoint.rotation;
+            pos.x--;
             sequenceEnter = DOTween.Sequence()
-              .Join(transform.DOMove(startPoint.position, 3f));
+              .Join(transform.DOMove(pos, 1f));
         }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == 6) { die(); }
+        else if(collision.gameObject.layer == 7) {
+            float yRot = transform.rotation.y;
+            this.transform.Rotate(0, -yRot, 0); }
+    }
+
+    public void die()
+    {
+        GetComponent<Animator>().enabled = false;
+        GetComponent<Collider>().enabled = false;
+
+        if (gameObject != null) { Destroy(gameObject, 3f); }
+        if(OnPersonHit != null) { OnPersonHit(); }
     }
 }
 

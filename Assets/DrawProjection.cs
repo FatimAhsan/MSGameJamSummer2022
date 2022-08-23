@@ -6,6 +6,7 @@ public class DrawProjection : MonoBehaviour
 {
     BirdController birdController;
     LineRenderer lineRenderer;
+    GameObject Bird;
 
     public int numPoints = 50;//nummber of points on line
     public float timeBetweenPoint = 0.1f;//distance between points on line

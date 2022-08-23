@@ -53,14 +53,22 @@
     <UnityVersion>2020.3.24f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\collision.cs" />
+    <Compile Include="Assets\ChildrenSpawnAndRandomise.cs" />
+    <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\DemoFree.cs" />
+    <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\SimpleSampleCharacterControl.cs" />
     <Compile Include="Assets\BirdController.cs" />
     <Compile Include="Assets\PersonMovement.cs" />
     <Compile Include="Assets\DrawProjection.cs" />
     <Compile Include="Assets\ControllingCameraAspectScript.cs" />
-    <Compile Include="Assets\collision.cs" />
+    <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\FreeCameraLogic.cs" />
+    <Compile Include="Assets\PeopleSpawnManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Supercyan Character Pack Free Sample\Shaders\Legacy\CelShader.shader" />
     <None Include="Assets\Kevin Iglesias\3DCharacterDummy\Readme.txt" />
+    <None Include="Assets\Supercyan Character Pack Free Sample\Shaders\SupercyanShader.shader" />
+    <None Include="Assets\Supercyan Character Pack Free Sample\Shaders\SupercyanShaderLighting.cginc" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
