@@ -745,7 +745,6 @@ GameObject:
   - component: {fileID: 2615282306535569691}
   - component: {fileID: 2668850079420447695}
   - component: {fileID: 2619412990690155293}
-  - component: {fileID: -8256593734959593308}
   m_Layer: 0
   m_Name: Child
   m_TagString: Untagged
@@ -804,19 +803,6 @@ MonoBehaviour:
   speed: 5
   MiddleOfScreen: {fileID: 0}
   _animator: {fileID: 0}
---- !u!65 &-8256593734959593308
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2620242231099291745}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.46015465, y: 0.9448402, z: 0.3125501}
-  m_Center: {x: 0.016082339, y: 0.54947007, z: 0.0038468242}
 --- !u!1 &2620570766398085579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,6 +1028,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2615122321031285661}
   - component: {fileID: 2716256691261173051}
+  - component: {fileID: 6351800663523864451}
   m_Layer: 0
   m_Name: C_man_1_FBX2013
   m_TagString: Untagged
@@ -1143,6 +1130,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.026544098, y: -0.000065948814, z: 0.000000006519258}
     m_Extent: {x: 0.055122387, y: 0.019937018, z: 0.02970102}
   m_DirtyAABB: 0
+--- !u!65 &6351800663523864451
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2620670662107736787}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03225363, y: 0.030585801, z: 0.09807511}
+  m_Center: {x: 0.00049590174, y: 0.005084433, z: 0.048452094}
 --- !u!1 &2620692107740916577
 GameObject:
   m_ObjectHideFlags: 0
