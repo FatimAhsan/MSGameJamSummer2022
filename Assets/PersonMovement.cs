@@ -57,22 +57,6 @@ public class PersonMovement : MonoBehaviour
               .Join(transform.DOMove(pos, 5f));
         }
     }
-
-    /*void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("collsion");
-        if (collision.gameObject.layer == 6) { die(); }
-
-    }
-
-    public void die()
-    {
-        GetComponent<Animator>().enabled = false;
-        GetComponent<Collider>().enabled = false;
-
-        if (gameObject != null) { Destroy(gameObject, 0.1f); }
-        if(OnPersonHit != null) { OnPersonHit(); }
-    }*/
 }
 
 
