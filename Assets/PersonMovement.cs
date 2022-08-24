@@ -14,6 +14,8 @@ public class PersonMovement : MonoBehaviour
     [SerializeField] private Animator _animator;
 
     private Sequence sequenceEnter;
+    private Sequence sequenceLookAtScreen;
+
     //bool isHit = false;
     private Vector3 StartPosition;
     public LayerMask CollideableLayers;//physics layer that will cause the line to stop being drawn
@@ -23,20 +25,54 @@ public class PersonMovement : MonoBehaviour
     {
         moveRightOrLeft(1);
         StartPosition = transform.position;
+        //gameObject.GetComponent<Rigidbody>().isKinematic = true;
     }
     // Update is called once per frame
     void Update()
     {
 
         if (transform.position.x == StartPosition.x)
-        { Debug.Log("moving right"); moveRightOrLeft(1); }
+        { //Debug.Log("moving right");
+          moveRightOrLeft(1); }
         else if (transform.position.x == -StartPosition.x)
-        { Debug.Log("moving left"); moveRightOrLeft(0); }
+        { //Debug.Log("moving left");
+            moveRightOrLeft(0); }
        // Debug.Log("update");
+    }
+
+
+
+    void OnCollisionEnter(Collision collision)
+    {
+        //
+        if (collision.gameObject.layer == 6)
+        {Debug.Log("collsion");
+            this.LookAtScreen();
+        }     
+        if (collision.gameObject.layer == 8)
+        {
+            
+            //gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            Vector3 pos = this.transform.position;
+            int randomNumber = Mathf.RoundToInt(Random.Range(5f, 10f));
+            this.transform.DOMoveZ(pos.z + randomNumber, 0.2f);
+        }
+    }
+
+    private void LookAtScreen()
+    {
+        sequenceLookAtScreen?.Kill();
+        Vector3 rot = transform.rotation.eulerAngles;
+        Vector3 rotY = rot;
+        rotY.y = 180;
+        sequenceLookAtScreen = DOTween.Sequence()
+          .Append(transform.DORotate(rotY, 0.2f))
+          .AppendInterval(1)
+          .Append(transform.DORotate(rot, 0.2f));
     }
     private void moveRightOrLeft(int RightorLeft)
     {
-        Debug.Log("Right or left function");
+        //Debug.Log("Right or left function");
         sequenceEnter?.Kill();
         Vector3 pos = transform.position;
         float distance = pos.x * 2;
@@ -57,6 +93,7 @@ public class PersonMovement : MonoBehaviour
               .Join(transform.DOMove(pos, 5f));
         }
     }
+
 }
 
 

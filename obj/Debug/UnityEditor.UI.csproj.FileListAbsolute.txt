@@ -1,0 +1,2 @@
+C:\Users\fatim\Documents\GitHub\MSGameJamSummer2022\obj\Debug\UnityEditor.UI.csprojAssemblyReference.cache
+C:\Users\fatim\Documents\GitHub\MSGameJamSummer2022\obj\Debug\UnityEditor.UI.csproj.CoreCompileInputs.cache
