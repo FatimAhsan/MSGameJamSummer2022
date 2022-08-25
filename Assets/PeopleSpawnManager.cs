@@ -10,22 +10,48 @@ public class PeopleSpawnManager : MonoBehaviour
 
     private GameObject SpawnedPerson;
 
-    private int randomNumber = 6;
+    private int randomNumber;
     int numberOfClones = 0;
+    public int numberOfPeopleInLevelOne = 2;//Number of people in level one is 2
+    public int numberOfHurdlesInLevelOne = -4;//Hurdles start from level 4
+
+    private int CurrentLevel = 0;//level tracker
 
     void Start()
     {
-        for (int i = 0; i < 3; i++)
+        CurrentLevel = 0;
+        for (int i = 0; i < numberOfPeopleInLevelOne; i++)
         { SpawnNewPerson(); }
     }
-    void Update()
-    {
-        //SpawnPointsInUse = 
-    }
-
     private void OnEnable()
     {
-       FoodCollision.OnFoodHit += SpawnNewPerson;
+        LevelManager.OnNewLevel += SpawnNewPeople;
+    }
+
+    void SpawnNewPeople()
+    {
+        CurrentLevel++;
+        numberOfClones = 0;
+        Debug.Log("Making new people: " + numberOfPeopleInLevelOne + CurrentLevel);
+        for (int i = 1; i <= (numberOfPeopleInLevelOne + CurrentLevel); i++)
+        { SpawnNewPerson(); }
+    }
+
+    private GameObject[] FindGameObjectsWithLayer(int x) {
+        GameObject[] goArray = FindObjectsOfType<GameObject>();
+        List<GameObject> goList = new List<GameObject>();
+        for (int i = 0; i < goArray.Length; i++)
+        {
+            if (goArray[i].layer == x)
+            {
+                goList.Add(goArray[i]);
+            }
+        }
+        if (goList.Count == 0)
+        {
+            return null;
+        }
+        return goList.ToArray();
     }
 
     void SpawnNewPerson()

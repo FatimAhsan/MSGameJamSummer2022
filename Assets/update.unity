@@ -604,6 +604,8 @@ MonoBehaviour:
   - {fileID: 521338016}
   SpawnPointsInUse: 
   PeoplePrefab: {fileID: 2620242231099291745, guid: 1a6eb854dfe8d214db7e730d7b32165f, type: 3}
+  numberOfPeopleInLevelOne: 2
+  numberOfHurdlesInLevelOne: -4
 --- !u!4 &614906663
 Transform:
   m_ObjectHideFlags: 0
@@ -1209,6 +1211,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1151328201}
+  - component: {fileID: 1151328202}
   m_Layer: 0
   m_Name: LevelsManager
   m_TagString: Untagged
@@ -1230,6 +1233,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1151328202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151328200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12295eab8d33164ea5f7962084f9849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 1
 --- !u!1 &1269640819
 GameObject:
   m_ObjectHideFlags: 0

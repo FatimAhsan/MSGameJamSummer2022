@@ -5,9 +5,7 @@ using DG.Tweening;
 
 public class PersonMovement : MonoBehaviour
 {
-    public delegate void PersonHit();
-    public static event PersonHit OnPersonHit;//from https://www.youtube.com/watch?v=NWNH9XRtuIc
-
+  
     public float speed = 5;
     public GameObject MiddleOfScreen;
 
