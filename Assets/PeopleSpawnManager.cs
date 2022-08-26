@@ -32,7 +32,7 @@ public class PeopleSpawnManager : MonoBehaviour
     {
         CurrentLevel++;
         numberOfClones = 0;
-        Debug.Log("Making new people: " + numberOfPeopleInLevelOne + CurrentLevel);
+        Debug.Log("Making new people: " + (numberOfPeopleInLevelOne + CurrentLevel));
         for (int i = 1; i <= (numberOfPeopleInLevelOne + CurrentLevel); i++)
         { SpawnNewPerson(); }
     }

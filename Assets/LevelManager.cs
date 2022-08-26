@@ -6,7 +6,7 @@ public class LevelManager : MonoBehaviour
 {
     public delegate void NewLevel();
     public static event NewLevel OnNewLevel;//from https://www.youtube.com/watch?v=NWNH9XRtuIc
-    public static LevelManager instance;
+    
 
     public int Level = 1;
     int howManyFoodCollsionSinceLevelStarted = 0;
@@ -35,6 +35,7 @@ public class LevelManager : MonoBehaviour
     {
         Level++;
         howManyFoodCollsionSinceLevelStarted = 0;
+        LevelProgressionManager.instance.AddPoint();
         if (OnNewLevel != null) { OnNewLevel(); }
     }
 }

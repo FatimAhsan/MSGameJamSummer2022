@@ -18,9 +18,8 @@ public class LevelProgressionManager : MonoBehaviour
     }
     void Start()
     {
-        scoreText.text = "POINTS:"+ score.ToString() ;
+        scoreText.text = "LEVEL: "+ score.ToString() ;
         highscoreText.text = "HIGHSCORE: " + highscore.ToString();
-
     }
 
     public int GetScore()
@@ -30,6 +29,6 @@ public class LevelProgressionManager : MonoBehaviour
     public void AddPoint()
     {
         score++;
-        scoreText.text = "POINTS:" + score.ToString();
+        scoreText.text = "LEVEL:" + score.ToString();
     }
 }

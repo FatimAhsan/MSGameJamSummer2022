@@ -17,7 +17,6 @@ public class FoodCollision : MonoBehaviour
     {
         if(collision.gameObject.layer == 6)
         {
-            LevelProgressionManager.instance.AddPoint();
             die();
         }
     }
