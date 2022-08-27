@@ -82,13 +82,13 @@ public class PersonMovement : MonoBehaviour
         {
             sequenceEnter = DOTween.Sequence()
               .Append(transform.DORotate(-rot, 0.2f))
-              .Join(transform.DOMove(pos, 5f));
+              .Join(transform.DOMove(pos, 10f));
         }
         else
         {
             sequenceEnter = DOTween.Sequence()
               .Append(transform.DORotate(-rot, 0.2f))
-              .Join(transform.DOMove(pos, 5f));
+              .Join(transform.DOMove(pos, 10f));
         }
     }
 

@@ -54,6 +54,7 @@ public class BirdController : MonoBehaviour
             {
                 throwBall();
             }
+            this.transform.Rotate(0, 0, 0);
         }
 
         if (isPressed)
@@ -61,7 +62,7 @@ public class BirdController : MonoBehaviour
             //move bird--------------------------------------------------
             float HorizontalRotation = (Input.mousePosition.x - start.x)/10;
 
-            HorizontalRotation = Mathf.Clamp(HorizontalRotation, -15, 15);
+            HorizontalRotation = Mathf.Clamp(HorizontalRotation, -60, 60);
             var rot = transform.localEulerAngles;
             rot.y = HorizontalRotation;
             transform.localEulerAngles = rot;
@@ -86,11 +87,13 @@ public class BirdController : MonoBehaviour
     private void createBall()
     {
         CreatePebble = (GameObject) Instantiate(BallPrefab, PebbleShootPoint.position, PebbleShootPoint.rotation);
+        CreatePebble.GetComponent<Rigidbody>().mass = 0;
     }
 
     private void throwBall()
     {
         CreatePebble.SetActive(true);
+        CreatePebble.GetComponent<Rigidbody>().mass = 1;
         CreatePebble.GetComponent<Rigidbody>().useGravity = true;
         force.y = start.y - end.y;
         float vel = Mathf.Sqrt((force.x * force.x) + (force.y * force.y));
@@ -125,7 +128,6 @@ public class BirdController : MonoBehaviour
             Vector3 newPoint = startingPosition + t * startingVelocity;
             newPoint.y = startingPosition.y + startingVelocity.y * t + Physics.gravity.y / 2f * t * t;
             points.Add(newPoint);
-
 
         }
 

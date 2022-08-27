@@ -32,8 +32,6 @@ public class DrawProjection : MonoBehaviour
             Vector3 newPoint = startingPosition + t * startingVelocity;
             newPoint.y = startingPosition.y + startingVelocity.y * t + Physics.gravity.y / 2f * t * t;
             points.Add(newPoint);
-
-
         }
 
         lineRenderer.SetPositions(points.ToArray());
