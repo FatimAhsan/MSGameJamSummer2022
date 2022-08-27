@@ -6,7 +6,8 @@ public class PeopleSpawnManager : MonoBehaviour
 {
     public Transform[] SpawnPoints;
     public List<int> SpawnPointsInUse;
-    public GameObject PeoplePrefab;
+    public GameObject boyPrefab;
+    public GameObject girlPrefab;
 
     private GameObject SpawnedPerson;
 
@@ -15,13 +16,15 @@ public class PeopleSpawnManager : MonoBehaviour
     public int numberOfPeopleInLevelOne = 2;//Number of people in level one is 2
     public int numberOfHurdlesInLevelOne = -4;//Hurdles start from level 4
 
-    private int CurrentLevel = 0;//level tracker
+    int numberOfPeopleToSpawn;
+    List<int> SpawnPositionsInUse;
+
+    private int CurrentLevel = -1;//level tracker
 
     void Start()
     {
-        CurrentLevel = 0;
-        for (int i = 0; i < numberOfPeopleInLevelOne; i++)
-        { SpawnNewPerson(); }
+        CurrentLevel = -1;
+        SpawnNewPeople();
     }
     private void OnEnable()
     {
@@ -30,11 +33,15 @@ public class PeopleSpawnManager : MonoBehaviour
 
     void SpawnNewPeople()
     {
+        SpawnPointsInUse.Clear();
         CurrentLevel++;
         numberOfClones = 0;
-        Debug.Log("Making new people: " + (numberOfPeopleInLevelOne + CurrentLevel));
-        for (int i = 1; i <= (numberOfPeopleInLevelOne + CurrentLevel); i++)
-        { SpawnNewPerson(); }
+
+        if (numberOfPeopleToSpawn < 6)
+        { numberOfPeopleToSpawn = numberOfPeopleInLevelOne + CurrentLevel; }
+
+        for (int i = 0; i < (numberOfPeopleToSpawn); i++)
+        {  SpawnPointsInUse.Add(SpawnNewPerson()); }
     }
 
     private GameObject[] FindGameObjectsWithLayer(int x) {
@@ -54,11 +61,28 @@ public class PeopleSpawnManager : MonoBehaviour
         return goList.ToArray();
     }
 
-    void SpawnNewPerson()
+    int SpawnNewPerson()
     { 
         randomNumber = Mathf.RoundToInt(Random.Range(0f, SpawnPoints.Length - 1));
-        SpawnedPerson = (GameObject) Instantiate(PeoplePrefab, SpawnPoints[randomNumber].transform.position, SpawnPoints[randomNumber].transform.rotation);
+        int newRandomnumber = Mathf.RoundToInt(Random.Range(0f, 1f));
+
+        while (SpawnPointsInUse.Contains(randomNumber))
+        {
+            if (SpawnPointsInUse.Contains(randomNumber)) 
+            { randomNumber = Mathf.RoundToInt(Random.Range(0f, SpawnPoints.Length - 1)); }
+            else { break; }
+        }
+
+
+        if(newRandomnumber == 0)
+            SpawnedPerson = (GameObject) Instantiate(boyPrefab, SpawnPoints[randomNumber].transform.position, SpawnPoints[randomNumber].transform.rotation);
+        else
+            SpawnedPerson = (GameObject)Instantiate(girlPrefab, SpawnPoints[randomNumber].transform.position, SpawnPoints[randomNumber].transform.rotation);
+        
+        
         SpawnedPerson.name = "Clone " + numberOfClones;
         numberOfClones++;
+
+        return randomNumber;
     }
 }
