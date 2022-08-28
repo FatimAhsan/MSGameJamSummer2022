@@ -1325,7 +1325,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8791774781104974060}
   - component: {fileID: 9045499541604336845}
-  - component: {fileID: 9045499541604336843}
   - component: {fileID: 9045499541604336842}
   m_Layer: 0
   m_Name: Bird
@@ -1461,23 +1460,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &9045499541604336843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8163187988987097686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c2d005ea7fde7d428e1aa0d4cfeb78e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numPoints: 50
-  timeBetweenPoint: 0.1
-  CollideableLayers:
-    serializedVersion: 2
-    m_Bits: 311
 --- !u!114 &9045499541604336842
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -406,6 +406,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 89.98, y: 0, z: 72.274}
+--- !u!1 &298528781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 298528782}
+  m_Layer: 0
+  m_Name: HurdleSpawnPoint1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &298528782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298528781}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.5, y: 0.5, z: 3.48}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 614906663}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &313886349
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,12 +460,42 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313886349}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.34, y: 0, z: 0.55}
+  m_LocalPosition: {x: -2.34, y: 0, z: 1.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 614906663}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!1 &327082867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 327082868}
+  m_Layer: 0
+  m_Name: HurdleSpawnPoint3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &327082868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327082867}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.12, y: 0.5, z: 4.46}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 614906663}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &469873193
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,7 +531,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 13, y: -75}
+  m_AnchoredPosition: {x: 13, y: -65}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &469873195
@@ -537,6 +597,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469873193}
   m_CullTransparentMesh: 1
+--- !u!1 &480353056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 480353057}
+  m_Layer: 0
+  m_Name: HurdleSpawnPoint5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &480353057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480353056}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.98000026, y: 0.5, z: 2.47}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 614906663}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &509573887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 509573888}
+  m_Layer: 0
+  m_Name: HurdleSpawnPoint4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &509573888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509573887}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 6.62}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 614906663}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &521338015
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,7 +681,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 521338015}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -4.91, y: 0, z: 5.36}
+  m_LocalPosition: {x: -4.91, y: 0, z: 5.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 614906663}
@@ -602,11 +722,23 @@ MonoBehaviour:
   - {fileID: 920467982}
   - {fileID: 1075651454}
   - {fileID: 521338016}
+  HurdleSpawnPoints:
+  - {fileID: 298528782}
+  - {fileID: 1181416220}
+  - {fileID: 327082868}
+  - {fileID: 509573888}
+  - {fileID: 480353057}
   SpawnPointsInUse: 
+  HurdleSpawnPointsInUse: 
   boyPrefab: {fileID: 74509890033887109, guid: 21cbdecf5cd3df14db4243258cd652f6, type: 3}
   girlPrefab: {fileID: 710022177341019926, guid: 12111939dce3dbc4f8e4dceb52382fdc, type: 3}
+  Bench: {fileID: 106578, guid: ccf13c7381ca25349b107bbb9423e1bd, type: 3}
+  Bush: {fileID: 192312, guid: 7712ec26597e75f4f9325357eefd61d4, type: 3}
+  Lamp: {fileID: 148980, guid: 00d08a984a77d7e43b1a3547211f47d5, type: 3}
+  tree_1: {fileID: 182448, guid: 357a66039fecd22469b4e4ea64729751, type: 3}
+  tree_3: {fileID: 188120, guid: c8a2cf893b362b14784799d9219265da, type: 3}
   numberOfPeopleInLevelOne: 2
-  numberOfHurdlesInLevelOne: -4
+  numberOfHurdlesInLevelOne: -1
 --- !u!4 &614906663
 Transform:
   m_ObjectHideFlags: 0
@@ -623,6 +755,11 @@ Transform:
   - {fileID: 920467982}
   - {fileID: 1075651454}
   - {fileID: 521338016}
+  - {fileID: 298528782}
+  - {fileID: 1181416220}
+  - {fileID: 327082868}
+  - {fileID: 509573888}
+  - {fileID: 480353057}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -710,7 +847,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920467981}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 5.74, y: 0, z: 3.34}
+  m_LocalPosition: {x: 5.08, y: 0, z: 3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 614906663}
@@ -846,7 +983,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 13, y: -54}
+  m_AnchoredPosition: {x: 13, y: -40}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1042982720
@@ -936,7 +1073,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075651453}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 4.29, y: 0, z: 3.25}
+  m_LocalPosition: {x: 2.85, y: 0, z: 4.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 614906663}
@@ -986,6 +1123,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Level: 1
+--- !u!1 &1181416219
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1181416220}
+  m_Layer: 0
+  m_Name: HurdleSpawnPoint2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1181416220
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181416219}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.68, y: 0.5, z: 0.99}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 614906663}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1269640819
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,7 +1579,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839094592}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -4.77, y: 0, z: 2.2}
+  m_LocalPosition: {x: -4.9, y: 0, z: -0.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 614906663}
@@ -1505,27 +1672,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 877149810144723096, guid: 8ec8188169b1f5a44a2345dfbafcca07, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 877149810144723096, guid: 8ec8188169b1f5a44a2345dfbafcca07, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.43
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 877149810144723096, guid: 8ec8188169b1f5a44a2345dfbafcca07, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.32
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 877149810144723096, guid: 8ec8188169b1f5a44a2345dfbafcca07, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.80385697
+      value: 0.7660445
       objectReference: {fileID: 0}
     - target: {fileID: 877149810144723096, guid: 8ec8188169b1f5a44a2345dfbafcca07, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.5948227
+      value: 0.6427876
       objectReference: {fileID: 0}
     - target: {fileID: 877149810144723096, guid: 8ec8188169b1f5a44a2345dfbafcca07, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 73
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 8163187988987097686, guid: 8ec8188169b1f5a44a2345dfbafcca07, type: 3}
       propertyPath: m_Name
@@ -1583,6 +1750,11 @@ PrefabInstance:
       propertyPath: BlastPower
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 9045499541604336842, guid: 8ec8188169b1f5a44a2345dfbafcca07, type: 3}
+      propertyPath: divideDragMagBy
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
+    - {fileID: 0}
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 8ec8188169b1f5a44a2345dfbafcca07, type: 3}
