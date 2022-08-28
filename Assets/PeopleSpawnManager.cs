@@ -62,10 +62,12 @@ public class PeopleSpawnManager : MonoBehaviour
         for (int i = 0; i < (numberOfPeopleToSpawn); i++)
         {  SpawnPointsInUse.Add(SpawnNewPerson()); }
 
+        LevelManager.instance.NumberOfPeopleOnScene = numberOfPeopleToSpawn;
     }
 
     void SpawnHurdles()
     {
+        HurdlesInstantiated.ForEach(Destroy);
         HurdleSpawnPointsInUse.Clear();
 
         if (CurrentLevel < 4)

@@ -6,10 +6,22 @@ public class LevelManager : MonoBehaviour
 {
     public delegate void NewLevel();
     public static event NewLevel OnNewLevel;//from https://www.youtube.com/watch?v=NWNH9XRtuIc
-    
+    public static LevelManager instance;
+
+    public int NumberOfPeopleOnScene =0;
 
     public int Level = 1;
     int howManyFoodCollsionSinceLevelStarted = 0;
+
+    private void Awake()
+    {
+        // First time run
+        if (instance == null)
+        {
+            // Save a reference to 'this'
+            instance = this;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +37,7 @@ public class LevelManager : MonoBehaviour
     {
         
         howManyFoodCollsionSinceLevelStarted++;Debug.Log(howManyFoodCollsionSinceLevelStarted);
-        if(howManyFoodCollsionSinceLevelStarted == (Level + 1)) 
+        if(howManyFoodCollsionSinceLevelStarted == NumberOfPeopleOnScene) 
         {
             Debug.Log("LEVEL INCREASED : " + Level);
             IncreaseLevel(); 
@@ -33,6 +45,7 @@ public class LevelManager : MonoBehaviour
     }
     void IncreaseLevel()
     {
+        //Debug.Log("THERE ARE PEOPLE ON SCENE : " + NumberOfPeopleOnScene);
         Level++;
         howManyFoodCollsionSinceLevelStarted = 0;
         LevelProgressionManager.instance.AddPoint();
