@@ -18,8 +18,9 @@ public class LevelProgressionManager : MonoBehaviour
     }
     void Start()
     {
-        scoreText.text = "LEVEL: "+ score.ToString() ;
-        highscoreText.text = "HIGHSCORE: " + highscore.ToString();
+        instance = this;
+       // scoreText.text = "LEVEL: "+ score.ToString() ;
+       // highscoreText.text = "HIGHSCORE: " + highscore.ToString();
     }
 
     public int GetScore()

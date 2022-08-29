@@ -32,11 +32,11 @@ public class PeopleSpawnManager : MonoBehaviour
     int numberOfPeopleToSpawn = 2;
     int numberOfHurdlesToSpawn = 0;
 
-    private int CurrentLevel = -1;//level tracker
+    private int CurrentLevel = LevelSelector.selectedLevel;//level tracker
 
     void Start()
     {
-        CurrentLevel = -1;
+        CurrentLevel = LevelSelector.selectedLevel;
         SpawnNewStuff();
     }
     private void OnEnable()

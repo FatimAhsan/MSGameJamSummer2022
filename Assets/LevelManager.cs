@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Level = 1;
+        Level = LevelSelector.selectedLevel;
     }
     private void OnEnable()
     {
@@ -45,10 +45,9 @@ public class LevelManager : MonoBehaviour
     }
     void IncreaseLevel()
     {
-        //Debug.Log("THERE ARE PEOPLE ON SCENE : " + NumberOfPeopleOnScene);
         Level++;
         howManyFoodCollsionSinceLevelStarted = 0;
-        LevelProgressionManager.instance.AddPoint();
+        //LevelProgressionManager.instance.AddPoint();
         if (OnNewLevel != null) { OnNewLevel(); }
     }
 }
