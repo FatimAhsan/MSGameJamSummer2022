@@ -320,8 +320,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.96357954, b: 0.37169808, a: 1}
-  m_Intensity: 0.61
+  m_Color: {r: 0.8018868, g: 0.78461033, b: 0.494749, a: 1}
+  m_Intensity: 0.56
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
