@@ -51,6 +51,7 @@ public class LevelManager : MonoBehaviour
 
     public void SendNewLevelEvent()
     {
+        NumberOfPeopleOnScene = 0;
         howManyFoodCollsionSinceLevelStarted = 0;
         SceneManager.LoadScene(2);
     }
