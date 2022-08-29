@@ -39,13 +39,12 @@ public class PeopleSpawnManager : MonoBehaviour
         CurrentLevel = LevelSelector.selectedLevel;
         SpawnNewStuff();
     }
-    private void OnEnable()
+    /*private void OnEnable()
     {
         LevelManager.OnNewLevel += SpawnNewStuff;
-    }
+    }*/
     void SpawnNewStuff()
     {        
-        CurrentLevel++;
         SpawnNewPeople();
         if(CurrentLevel > 1)
             SpawnHurdles();
@@ -56,13 +55,14 @@ public class PeopleSpawnManager : MonoBehaviour
         numberOfClones = 0;
 
         if (CurrentLevel<4)
-        { numberOfPeopleToSpawn = numberOfPeopleInLevelOne + CurrentLevel; }
-        else { numberOfPeopleToSpawn = Mathf.RoundToInt(Random.Range(1f, 5f)); }
+        { numberOfPeopleToSpawn = 1 + CurrentLevel; }
+        else { numberOfPeopleToSpawn = 5; }
 
         for (int i = 0; i < (numberOfPeopleToSpawn); i++)
         {  SpawnPointsInUse.Add(SpawnNewPerson()); }
 
-        LevelManager.instance.NumberOfPeopleOnScene = numberOfPeopleToSpawn;
+        Debug.Log("Number of people in game rn: " + numberOfPeopleToSpawn);
+        //LevelManager.instance.NumberOfPeopleOnScene = numberOfPeopleToSpawn;
     }
 
     void SpawnHurdles()
