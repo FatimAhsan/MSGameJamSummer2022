@@ -161,8 +161,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
-    - Class: 212
-      Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
     - Class: 222
@@ -379,7 +377,7 @@ ScriptsOnlyBuild:
     className: SimpleSampleCharacterControl
   - hash:
       serializedVersion: 2
-      Hash: e98fa64fe91237ed7b40e197ef6ee46d
+      Hash: b0c1d3dcd2e4fc81ae65d5ccde843b67
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BirdController
@@ -511,7 +509,7 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: ac7f9e9e00371f77e5331d1494cf8b3d
+      Hash: 292e9609a3b032d8791f5461b543b790
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PersonMovement

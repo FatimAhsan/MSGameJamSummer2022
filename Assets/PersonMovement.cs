@@ -7,12 +7,22 @@ public class PersonMovement : MonoBehaviour
 {
   
     public float speed = 5;
-    public GameObject MiddleOfScreen;
+
+    public Transform FoodPosition;
 
     [SerializeField] private Animator _animator;
 
     private Sequence sequenceEnter;
     private Sequence sequenceLookAtScreen;
+
+    //we have 6 food 
+    public GameObject Burger;
+    public GameObject Cake;
+    public GameObject CakePop;
+    public GameObject Fries;
+    public GameObject Pizza;
+    public GameObject Shake;
+    private GameObject SpawnedFood;
 
     //bool isHit = false;
     private Vector3 StartPosition;
@@ -23,7 +33,22 @@ public class PersonMovement : MonoBehaviour
     {
         moveRightOrLeft(1);
         StartPosition = transform.position;
-        //gameObject.GetComponent<Rigidbody>().isKinematic = true;
+
+        int randomNumber = Mathf.RoundToInt(Random.Range(0f, 5f));
+        if (randomNumber == 0)
+            SpawnedFood = (GameObject)Instantiate(Burger, FoodPosition.transform.position, Burger.transform.rotation);
+        else if (randomNumber == 1)
+            SpawnedFood = (GameObject)Instantiate(Cake, FoodPosition.transform.position, Cake.transform.rotation);
+        else if (randomNumber == 2)
+            SpawnedFood = (GameObject)Instantiate(CakePop, FoodPosition.transform.position, CakePop.transform.rotation);
+        else if (randomNumber == 3)
+            SpawnedFood = (GameObject)Instantiate(Fries, FoodPosition.transform.position, Fries.transform.rotation);
+        else if (randomNumber == 4)
+            SpawnedFood = (GameObject)Instantiate(Pizza, FoodPosition.transform.position, Pizza.transform.rotation);
+        else
+            SpawnedFood = (GameObject)Instantiate(Shake, FoodPosition.transform.position, Shake.transform.rotation);
+
+        SpawnedFood.transform.parent = gameObject.transform;
     }
     // Update is called once per frame
     void Update()

@@ -4,25 +4,18 @@ using UnityEngine;
 
 public class collision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
+    public delegate void PebbleHit();
+    public static event PebbleHit OnPebbleHit;//from https://www.youtube.com/watch?v=NWNH9XRtuIc
 
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.layer != 6)
+        
+        if (collision.gameObject.layer != 6)
           Destroy(this.gameObject);
         if(collision.gameObject.tag == "Food")
         {
             Destroy(collision.gameObject);
         }
+        if (OnPebbleHit != null) { OnPebbleHit(); }
     }
 }

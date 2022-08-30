@@ -29,58 +29,64 @@ public class BirdController : MonoBehaviour
         isPressed = isBallThrown = false;
         lineRenderer.enabled = false;
     }
+
+    private void OnEnable()
+    {
+        collision.OnPebbleHit += isBallThrownTrue;
+    }
+
+    void isBallThrownTrue() { isBallThrown = false; }
+
     void Update()
     {
-        if (CreatePebble == null)
-            isBallThrown = false;
-
         if (isBallThrown)
         {
             return;
         }
-
-       if (Input.GetMouseButtonDown(0))
+        else
         {
-            lineRenderer.enabled = true;
-            isPressed = true; start = Input.mousePosition;
-            if (!CreatePebble)
-                createBall();
-        }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            lineRenderer.enabled = false;
-            isPressed = false; end = Input.mousePosition;
-            if (!isBallThrown)
+            if (Input.GetMouseButtonDown(0))
             {
-                throwBall();
+                lineRenderer.enabled = true;
+                isPressed = true; start = Input.mousePosition;
+                if (!CreatePebble)
+                    createBall();
             }
-            this.transform.Rotate(0, 0, 0);
+            else if (Input.GetMouseButtonUp(0))
+            {
+                lineRenderer.enabled = false;
+                isPressed = false; end = Input.mousePosition;
+                if (!isBallThrown && CreatePebble)
+                {
+                    throwBall();
+                }
+                this.transform.Rotate(0, 0, 0);
+            }
+
+            if (isPressed)
+            {
+                //move bird--------------------------------------------------
+                float HorizontalRotation = (Input.mousePosition.x - start.x) / 10;
+
+                HorizontalRotation = Mathf.Clamp(HorizontalRotation, -60, 60);
+                var rot = transform.localEulerAngles;
+                rot.y = HorizontalRotation;
+                transform.localEulerAngles = rot;
+
+                // transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles +
+                //    new Vector3(0, HorizontalRotation, 0)
+                //    );
+
+                //-----------------------------------------------------------
+
+                //display linerenderer--------------------------------------------
+                if (lineRenderer.enabled)
+                    setTrajectoryPoints();
+                //------------------------------------------------------------------
+
+            }
+            else { this.transform.Rotate(0, 0, 0); }
         }
-
-        if (isPressed)
-        {
-            //move bird--------------------------------------------------
-            float HorizontalRotation = (Input.mousePosition.x - start.x)/10;
-
-            HorizontalRotation = Mathf.Clamp(HorizontalRotation, -60, 60);
-            var rot = transform.localEulerAngles;
-            rot.y = HorizontalRotation;
-            transform.localEulerAngles = rot;
-
-           // transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles +
-            //    new Vector3(0, HorizontalRotation, 0)
-            //    );
-
-            //-----------------------------------------------------------
-
-            //display linerenderer--------------------------------------------
-            if (lineRenderer.enabled)
-                setTrajectoryPoints();
-            //------------------------------------------------------------------
-
-        }
-        else { this.transform.Rotate(0, 0, 0); }
-
     }
 
 
@@ -105,11 +111,6 @@ public class BirdController : MonoBehaviour
         //     .AddForce(GetForceFrom(CreatePebble.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition)), ForceMode.Impulse);
         // CreatePebble.GetComponent<Rigidbody>().AddForce(force);
         isBallThrown = true;
-    }
-
-    private Vector2 GetForceFrom(Vector3 fromPos, Vector3 toPos)
-    {
-        return (new Vector2(toPos.x, toPos.y) - new Vector2(fromPos.x, fromPos.y)) * BlastPower;
     }
 
     void setTrajectoryPoints()

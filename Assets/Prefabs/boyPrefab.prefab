@@ -31,6 +31,7 @@ Transform:
   m_Children:
   - {fileID: 8499958290752572032}
   - {fileID: 2077797906703176344}
+  - {fileID: 6211403270219929179}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,8 +48,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  MiddleOfScreen: {fileID: 0}
+  FoodPosition: {fileID: 6211403270219929179}
   _animator: {fileID: 0}
+  Burger: {fileID: 1863070145994120389, guid: 7278965d9a7191741848bc7db7f312fd, type: 3}
+  Cake: {fileID: 3453122812250098065, guid: 11e6bb4503f9bef47a3bda9d3daac662, type: 3}
+  CakePop: {fileID: 4204927963620759544, guid: 60863f85c9d36c640bf0a0966bc7c0fa, type: 3}
+  Fries: {fileID: 8871948552191715147, guid: ab560466cb52d344f879b2ba21511e00, type: 3}
+  Pizza: {fileID: 121738673731098551, guid: 86e0324e66630ac48954c5c7c97a5c22, type: 3}
+  Shake: {fileID: 3122179480055332654, guid: 1301b323a6abfa840b8446a36ad53be0, type: 3}
   CollideableLayers:
     serializedVersion: 2
     m_Bits: 375
@@ -84,7 +91,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2077797906703176344
 Transform:
   m_ObjectHideFlags: 0
@@ -173,6 +180,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1dec0e95115a840abed383413a9097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &5114927189231190177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6211403270219929179}
+  m_Layer: 8
+  m_Name: FoodPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6211403270219929179
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114927189231190177}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.73, z: 0.71}
+  m_LocalScale: {x: 0.6669276, y: 0.6669276, z: 0.6669276}
+  m_Children: []
+  m_Father: {fileID: 3412986941711243967}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8250403729045253483
 PrefabInstance:
   m_ObjectHideFlags: 0
