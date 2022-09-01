@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class FoodCollision : MonoBehaviour
 {
@@ -22,7 +23,22 @@ public class FoodCollision : MonoBehaviour
     }
     public void die()
     {
-        if (gameObject != null) { Destroy(transform.parent.gameObject, 0.1f); }
+        if (gameObject != null)
+        {
+            GameObject parentobj = transform.parent.gameObject;
+            Destroy(gameObject, 0.1f);
+
+            Sequence newseq = parentobj.GetComponent<PersonMovement>().sequenceEnter;
+            newseq?.Kill();
+
+            newseq = parentobj.GetComponent<PersonMovement>().sequenceLookAtScreen;
+            bool isright = parentobj.GetComponent<PersonMovement>().isDirectionRight;
+            parentobj.GetComponent<PersonMovement>().LookAtScreenAndRun();
+
+            
+            Destroy(parentobj, 5f);
+            
+        }
         if (OnFoodHit != null) { OnFoodHit(); }
     }
 }

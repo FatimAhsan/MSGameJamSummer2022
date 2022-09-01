@@ -12,8 +12,11 @@ public class LevelCompleteScript : MonoBehaviour
 
     public void nextLevel()
     {
-        LevelSelector.selectedLevel++;
-        SceneManager.LoadScene(1);
+        if (LevelSelector.selectedLevel != 10)
+        {
+            LevelSelector.selectedLevel++;
+            SceneManager.LoadScene(1);
+        }
     }
 
     public void openLevels()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class BirdController : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class BirdController : MonoBehaviour
     LineRenderer lineRenderer;
 
     public float divideDragMagBy = 10;
-
+    Sequence dance;
 
     // Update is called once per frame
     void Start()
@@ -33,9 +34,12 @@ public class BirdController : MonoBehaviour
     private void OnEnable()
     {
         collision.OnPebbleHit += isBallThrownTrue;
+        
     }
-
-    void isBallThrownTrue() { isBallThrown = false; }
+    void isBallThrownTrue() 
+    { 
+        isBallThrown = false;
+    }
 
     void Update()
     {

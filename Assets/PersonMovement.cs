@@ -12,8 +12,8 @@ public class PersonMovement : MonoBehaviour
 
     [SerializeField] private Animator _animator;
 
-    private Sequence sequenceEnter;
-    private Sequence sequenceLookAtScreen;
+    public Sequence sequenceEnter;//public as used in FoodCollison
+    public Sequence sequenceLookAtScreen;//public as used in FoodCollison
 
     //we have 6 food 
     public GameObject Burger;
@@ -24,7 +24,7 @@ public class PersonMovement : MonoBehaviour
     public GameObject Shake;
     private GameObject SpawnedFood;
 
-    //bool isHit = false;
+    public bool isDirectionRight; //public as used in FoodCollison
     private Vector3 StartPosition;
     public LayerMask CollideableLayers;//physics layer that will cause the line to stop being drawn
 
@@ -69,21 +69,16 @@ public class PersonMovement : MonoBehaviour
     {
         //
         if (collision.gameObject.layer == 6)
-        {Debug.Log("collsion");
+        {
+            GetComponent<AudioSource>().Play();
+            Debug.Log("collsion");
             this.LookAtScreen();
         }     
-        if (collision.gameObject.layer == 8)
-        {
-            
-            //gameObject.GetComponent<Rigidbody>().isKinematic = false;
-            Vector3 pos = this.transform.position;
-            int randomNumber = Mathf.RoundToInt(Random.Range(5f, 10f));
-            this.transform.DOMoveZ(pos.z + randomNumber, 0.2f);
-        }
     }
 
-    private void LookAtScreen()
+    public void LookAtScreen()
     {
+        //public as used in FoodCollison
         sequenceLookAtScreen?.Kill();
         Vector3 rot = transform.rotation.eulerAngles;
         Vector3 rotY = rot;
@@ -93,6 +88,27 @@ public class PersonMovement : MonoBehaviour
           .AppendInterval(1)
           .Append(transform.DORotate(rot, 0.2f));
     }
+
+    public void LookAtScreenAndRun()
+    {
+        sequenceLookAtScreen?.Kill();
+        Vector3 rot = transform.rotation.eulerAngles;
+        Vector3 rotY = rot;
+        rotY.y = 180;
+        sequenceLookAtScreen = DOTween.Sequence()
+          .Append(transform.DORotate(rotY, 0.2f))
+          .AppendInterval(1)
+          .Append(transform.DORotate(rot, 0.2f));
+
+        if (isDirectionRight)
+        {
+            sequenceLookAtScreen.Append(transform.DOMoveX(20, 3f));
+        }
+        else
+        {
+            sequenceLookAtScreen.Append(transform.DOMoveX(-20, 3f));
+        }
+    }
     private void moveRightOrLeft(int RightorLeft)
     {
         //Debug.Log("Right or left function");
@@ -100,21 +116,18 @@ public class PersonMovement : MonoBehaviour
         Vector3 pos = transform.position;
         float distance = pos.x * 2;
         float duration = distance / speed;
+
+        if (pos.x < 0) { isDirectionRight = true; }
+        else { isDirectionRight = false; }
+
         pos.x = -pos.x;
         Vector3 rot = transform.rotation.eulerAngles;
+        
+        sequenceEnter = DOTween.Sequence()
+          .Append(transform.DORotate(-rot, 0.2f))
+          .Join(transform.DOMove(pos, 10f));
+        
 
-        if (RightorLeft == 1)
-        {
-            sequenceEnter = DOTween.Sequence()
-              .Append(transform.DORotate(-rot, 0.2f))
-              .Join(transform.DOMove(pos, 10f));
-        }
-        else
-        {
-            sequenceEnter = DOTween.Sequence()
-              .Append(transform.DORotate(-rot, 0.2f))
-              .Join(transform.DOMove(pos, 10f));
-        }
     }
 
 }

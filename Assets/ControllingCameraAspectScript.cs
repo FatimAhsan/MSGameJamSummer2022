@@ -8,10 +8,12 @@ public class ControllingCameraAspectScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        GameObject.FindGameObjectWithTag("Music").GetComponent<gameSound>().PlayMusic();//play music
+
         // set the desired aspect ratio (the values in this example are
         // hard-coded for 16:9, but you could make them into public
         // variables instead so you can set them at design time)
-        float targetaspect = 16.0f / 9.0f;
+        /*float targetaspect = 16.0f / 9.0f;
 
         // determine the game window's current aspect ratio
         float windowaspect = (float)Screen.width / (float)Screen.height;
@@ -46,7 +48,7 @@ public class ControllingCameraAspectScript : MonoBehaviour
             rect.y = 0;
 
             camera.rect = rect;
-        }
+        }*/
     }
 
 }
