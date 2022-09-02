@@ -66,10 +66,11 @@
     <Compile Include="Assets\DrawProjection.cs" />
     <Compile Include="Assets\StartMenu.cs" />
     <Compile Include="Assets\ControllingCameraAspectScript.cs" />
+    <Compile Include="Assets\gameSound.cs" />
     <Compile Include="Assets\LevelText.cs" />
     <Compile Include="Assets\PeopleSpawnManager.cs" />
     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\FreeCameraLogic.cs" />
-    <Compile Include="Assets\gameSound.cs" />
+    <Compile Include="Assets\AudioController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -34,7 +34,6 @@ public class BirdController : MonoBehaviour
     private void OnEnable()
     {
         collision.OnPebbleHit += isBallThrownTrue;
-        
     }
     void isBallThrownTrue() 
     { 

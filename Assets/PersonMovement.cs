@@ -102,11 +102,11 @@ public class PersonMovement : MonoBehaviour
 
         if (isDirectionRight)
         {
-            sequenceLookAtScreen.Append(transform.DOMoveX(20, 3f));
+            sequenceLookAtScreen.Append(transform.DOMoveX(10, 3f));
         }
         else
         {
-            sequenceLookAtScreen.Append(transform.DOMoveX(-20, 3f));
+            sequenceLookAtScreen.Append(transform.DOMoveX(-10, 3f));
         }
     }
     private void moveRightOrLeft(int RightorLeft)

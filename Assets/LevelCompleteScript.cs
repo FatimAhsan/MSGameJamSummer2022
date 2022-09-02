@@ -7,7 +7,7 @@ public class LevelCompleteScript : MonoBehaviour
 {
     public void retry()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
     }
 
     public void nextLevel()
@@ -15,12 +15,12 @@ public class LevelCompleteScript : MonoBehaviour
         if (LevelSelector.selectedLevel != 10)
         {
             LevelSelector.selectedLevel++;
-            SceneManager.LoadScene(1);
+            SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
         }
     }
 
     public void openLevels()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
     }
 }
