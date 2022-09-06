@@ -15,6 +15,6 @@ public class AudioController : MonoBehaviour
     }
     void playAudio()
     {
-        GetComponent<AudioSource>().Play();
+        gameObject.GetComponent<AudioSource>().Play();
     }
 }

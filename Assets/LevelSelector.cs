@@ -10,7 +10,7 @@ public class LevelSelector : MonoBehaviour
     public int Level;
     public void PlayGame()
     {
-        selectedLevel = Level;
+        selectedLevel = Level; 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

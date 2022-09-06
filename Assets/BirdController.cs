@@ -21,7 +21,6 @@ public class BirdController : MonoBehaviour
     LineRenderer lineRenderer;
 
     public float divideDragMagBy = 10;
-    Sequence dance;
 
     // Update is called once per frame
     void Start()
@@ -76,10 +75,6 @@ public class BirdController : MonoBehaviour
                 rot.y = HorizontalRotation;
                 transform.localEulerAngles = rot;
 
-                // transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles +
-                //    new Vector3(0, HorizontalRotation, 0)
-                //    );
-
                 //-----------------------------------------------------------
 
                 //display linerenderer--------------------------------------------
@@ -106,13 +101,9 @@ public class BirdController : MonoBehaviour
         CreatePebble.GetComponent<Rigidbody>().useGravity = true;
         force.y = start.y - end.y;
         float vel = Mathf.Sqrt((force.x * force.x) + (force.y * force.y));
+        if (vel > 79) vel = 79;
         CreatePebble.GetComponent<Rigidbody>().velocity = (PebbleShootPoint.up) * (BlastPower+vel/divideDragMagBy);
-
-
-
-        // CreatePebble.GetComponent<Rigidbody>()
-        //     .AddForce(GetForceFrom(CreatePebble.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition)), ForceMode.Impulse);
-        // CreatePebble.GetComponent<Rigidbody>().AddForce(force);
+        Debug.Log(vel);
         isBallThrown = true;
     }
 
@@ -125,6 +116,7 @@ public class BirdController : MonoBehaviour
 
         force.y = start.y - Input.mousePosition.y;
         float vel = Mathf.Sqrt((force.x * force.x) + (force.y * force.y));
+        if (vel > 79) vel = 79;
         Vector3 startingVelocity = (PebbleShootPoint.up) * (BlastPower + vel/divideDragMagBy);
 
         for (float t = 0; t < numOfTrajectoryPoints; t +=0.1f)

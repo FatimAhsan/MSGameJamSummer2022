@@ -34,15 +34,12 @@ public class PeopleSpawnManager : MonoBehaviour
 
     private int CurrentLevel = LevelSelector.selectedLevel;//level tracker
 
-    void Start()
+    private void Start()
     {
         CurrentLevel = LevelSelector.selectedLevel;
+        
         SpawnNewStuff();
     }
-    /*private void OnEnable()
-    {
-        LevelManager.OnNewLevel += SpawnNewStuff;
-    }*/
     void SpawnNewStuff()
     {        
         SpawnNewPeople();
@@ -61,8 +58,6 @@ public class PeopleSpawnManager : MonoBehaviour
         for (int i = 0; i < (numberOfPeopleToSpawn); i++)
         {  SpawnPointsInUse.Add(SpawnNewPerson()); }
 
-        Debug.Log("Number of people in game rn: " + numberOfPeopleToSpawn);
-        //LevelManager.instance.NumberOfPeopleOnScene = numberOfPeopleToSpawn;
     }
 
     void SpawnHurdles()
@@ -82,7 +77,7 @@ public class PeopleSpawnManager : MonoBehaviour
     int SpawnNewHurdle()
     {
         randomNumber = Mathf.RoundToInt(Random.Range(0f, SpawnPoints.Length - 1));
-        int newRandomnumber = Mathf.RoundToInt(Random.Range(0f, 4f));//we have 5 hurdles, bench , bush, lamp, tree_1, tree_3
+        int newRandomnumber = Mathf.RoundToInt(Random.Range(0f, 5f));//we have 5 hurdles, bench , bush, lamp, tree_1, tree_3
 
         while (HurdleSpawnPointsInUse.Contains(randomNumber))
         {
@@ -94,12 +89,18 @@ public class PeopleSpawnManager : MonoBehaviour
 
         if (newRandomnumber == 0)
             SpawnedHurdle = (GameObject)Instantiate(Bench, HurdleSpawnPoints[randomNumber].transform.position, Bench.transform.rotation);
-        else if(newRandomnumber == 1)
+        else if (newRandomnumber == 1)
             SpawnedHurdle = (GameObject)Instantiate(Bush, HurdleSpawnPoints[randomNumber].transform.position, Bush.transform.rotation);
         else if (newRandomnumber == 2)
-            SpawnedHurdle = (GameObject)Instantiate(Lamp, HurdleSpawnPoints[randomNumber].transform.position, Lamp.transform.rotation);
+        {
+            Vector3 pos = HurdleSpawnPoints[randomNumber].transform.position; pos.y = 0.8f;
+            SpawnedHurdle = (GameObject)Instantiate(Lamp, pos, Lamp.transform.rotation);
+        }
         else if (newRandomnumber == 3)
-            SpawnedHurdle = (GameObject)Instantiate(tree_1, HurdleSpawnPoints[randomNumber].transform.position, tree_1.transform.rotation);
+        {
+            Vector3 pos = HurdleSpawnPoints[randomNumber].transform.position; pos.y = -0.2f;
+            SpawnedHurdle = (GameObject)Instantiate(tree_1, pos, tree_1.transform.rotation);
+        }
         else
             SpawnedHurdle = (GameObject)Instantiate(tree_3, HurdleSpawnPoints[randomNumber].transform.position, tree_3.transform.rotation);
 

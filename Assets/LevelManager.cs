@@ -13,18 +13,6 @@ public class LevelManager : MonoBehaviour
 
     public static int Level;
     int howManyFoodCollsionSinceLevelStarted = 0;
-
-    /*private void Awake()
-    {
-        // First time run
-        if (instance == null)
-        {
-            // Save a reference to 'this'
-            instance = this;
-        }
-    }*/
-
-    // Start is called before the first frame update
     void Start()
     {
         howManyFoodCollsionSinceLevelStarted = 0;
@@ -41,10 +29,10 @@ public class LevelManager : MonoBehaviour
     void Increase_howManyFoodCollsionSinceLevelStarted()
     {
         howManyFoodCollsionSinceLevelStarted++;
-        Debug.Log("Food collected: "+ howManyFoodCollsionSinceLevelStarted + " with many people:" + NumberOfPeopleOnScene) ;
+       
         if(howManyFoodCollsionSinceLevelStarted == NumberOfPeopleOnScene) 
         {
-            Debug.Log("LEVEL INCREASED : " + Level);
+            
             SendNewLevelEvent();
         }
     }

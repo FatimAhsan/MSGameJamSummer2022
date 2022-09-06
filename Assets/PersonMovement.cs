@@ -71,7 +71,7 @@ public class PersonMovement : MonoBehaviour
         if (collision.gameObject.layer == 6)
         {
             GetComponent<AudioSource>().Play();
-            Debug.Log("collsion");
+            
             this.LookAtScreen();
         }     
     }
