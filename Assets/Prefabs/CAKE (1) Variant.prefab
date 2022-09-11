@@ -75,6 +75,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CAKE (1) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: accbc5acbcf350f4198d3b35ced9ade2, type: 3}
+      propertyPath: m_TagString
+      value: Food
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: accbc5acbcf350f4198d3b35ced9ade2, type: 3}
 --- !u!1 &3453122812250098065 stripped

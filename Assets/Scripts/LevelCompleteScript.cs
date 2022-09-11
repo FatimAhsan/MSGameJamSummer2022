@@ -7,6 +7,7 @@ public class LevelCompleteScript : MonoBehaviour
 {
     public void retry()
     {
+        //Destroy(GameObject.FindGameObjectWithTag("birdmusic"));
         SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
     }
 
@@ -22,6 +23,7 @@ public class LevelCompleteScript : MonoBehaviour
 
     public void openLevels()
     {
+        Destroy(GameObject.FindGameObjectWithTag("Music"));
         SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
     }
 }

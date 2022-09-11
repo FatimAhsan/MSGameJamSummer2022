@@ -15,24 +15,25 @@ public class LevelManager : MonoBehaviour
     private int NumberOfPeopleOnScene =0;
 
     public static int Level;
-    int howManyFoodCollsionSinceLevelStarted = 0;
+    public int howManyFoodCollsionSinceLevelStarted = 0;
     void Start()
     {
-        howManyFoodCollsionSinceLevelStarted = 0;
         Level = LevelSelector.selectedLevel;
         if (Level < 4)
             NumberOfPeopleOnScene = 1 + Level;
         else NumberOfPeopleOnScene = 5;
     }
+    public void ResetColiisons() { howManyFoodCollsionSinceLevelStarted = 0;Debug.Log("done"); NumberOfPeopleOnScene = 0; }
     private void OnEnable()
     {
        PersonMovement.OnFoodHit += Increase_howManyFoodCollsionSinceLevelStarted;
     }
-
+    void ResetCollsions() { howManyFoodCollsionSinceLevelStarted = 10; }
     void Increase_howManyFoodCollsionSinceLevelStarted()
     {
         howManyFoodCollsionSinceLevelStarted++;
         Debug.Log("How many people on scene:" + NumberOfPeopleOnScene + "   food collsions since start:" + howManyFoodCollsionSinceLevelStarted);
+
         if(howManyFoodCollsionSinceLevelStarted == NumberOfPeopleOnScene) 
         {
             rightParticle.Play();

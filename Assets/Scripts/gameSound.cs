@@ -7,6 +7,7 @@ public class gameSound : MonoBehaviour
 {
     private AudioSource _audioSource;
     public Slider volumeSlider;
+    bool isAtSTart = true;
 
     void OnEnable()
     {
@@ -29,7 +30,13 @@ public class gameSound : MonoBehaviour
     public void PlayMusic()
     {
         if (_audioSource.isPlaying) return;
-        _audioSource.Play();
+        Debug.Log(isAtSTart + "isSTart");
+        if (isAtSTart)
+        {
+            _audioSource.Play();
+            _audioSource.volume = (volumeSlider.value);
+            isAtSTart = false;
+        }
     }
 
     public void StopMusic()

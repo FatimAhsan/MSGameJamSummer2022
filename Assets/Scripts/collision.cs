@@ -12,10 +12,6 @@ public class collision : MonoBehaviour
         
         if (collision.gameObject.layer != 6)
           Destroy(this.gameObject);
-        if(collision.gameObject.tag == "Food")
-        {
-            Destroy(collision.gameObject);
-        }
         if (OnPebbleHit != null) { OnPebbleHit(); }
     }
 }

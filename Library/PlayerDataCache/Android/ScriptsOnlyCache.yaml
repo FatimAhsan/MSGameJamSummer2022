@@ -404,7 +404,7 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
-      Hash: 3b0631cb13e38949c04aa1d69eacdc2f
+      Hash: c5e6c5399db41fa6adb4bd37a20639f6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LevelManager
@@ -434,7 +434,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: e98fa64fe91237ed7b40e197ef6ee46d
+      Hash: 9082b1369aa0314186eb0b5606f1d7fa
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BirdController

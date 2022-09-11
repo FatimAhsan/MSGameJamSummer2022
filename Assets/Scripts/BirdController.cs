@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class BirdController : MonoBehaviour
 {
@@ -21,13 +22,20 @@ public class BirdController : MonoBehaviour
     LineRenderer lineRenderer;
 
     public float divideDragMagBy = 50;
-
+    public int NumberOfPebbles;
+    public Text pebbletext;
+    public Text outOFPebbbles;
     // Update is called once per frame
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
         isPressed = isBallThrown = false;
         lineRenderer.enabled = false;
+
+        if (LevelSelector.selectedLevel <= 7)
+        { NumberOfPebbles = LevelSelector.selectedLevel + 5; }
+        else NumberOfPebbles = 5;
+        pebbletext.text = "PEBBLES: " + NumberOfPebbles.ToString();
     }
 
     private void OnEnable()
@@ -51,8 +59,9 @@ public class BirdController : MonoBehaviour
             {
                 lineRenderer.enabled = true;start = Input.mousePosition;
                 isPressed = true; 
-                if (!CreatePebble)
+                if (!CreatePebble && NumberOfPebbles != 0)
                     createBall();
+                if(NumberOfPebbles == 0) { outOFPebbbles.text = "OUT OF PEBBLES, TRY AGAIN!"; lineRenderer.enabled = false;}
             }
             else if (Input.GetMouseButtonUp(0))
             {
@@ -95,6 +104,9 @@ public class BirdController : MonoBehaviour
     }
     private void throwBall()
     {
+        NumberOfPebbles--;
+        pebbletext.text = "PEBBLES: " + NumberOfPebbles.ToString();
+
         CreatePebble.SetActive(true);
         CreatePebble.GetComponent<Rigidbody>().mass = 1;
         CreatePebble.GetComponent<Rigidbody>().useGravity = true;
