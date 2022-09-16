@@ -10,10 +10,14 @@ public class textFade : MonoBehaviour
     void Start()
     {
         if (LevelSelector.selectedLevel == 1)
-        { 
+        {
             text.text = "DRAG TO AIM!";
-            StartCoroutine(ExampleCoroutine()); 
         }
+        else if(LevelSelector.selectedLevel == 4)
+        {
+            text.text = "AIM AT THE HELMETS TO DROP THEM!";
+        }
+        StartCoroutine(ExampleCoroutine());
     }
 
     IEnumerator ExampleCoroutine()

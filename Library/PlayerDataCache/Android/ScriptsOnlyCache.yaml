@@ -29,10 +29,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -434,7 +432,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 9082b1369aa0314186eb0b5606f1d7fa
+      Hash: b8e6dd33b6a296424a316c777de1515c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BirdController
@@ -578,7 +576,7 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: 8604eb2f72c15267793f00f377675913
+      Hash: f4fe11ef5d91f1c15f6effba07d19a51
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PersonMovement
@@ -869,4 +867,4 @@ ScriptsOnlyBuild:
   - Assets/UI.unity
   - Assets/update.unity
   - Assets/levelComplete.unity
-  playerPath: C:/Users/fatim/Documents/GitHub/MSGameJamSummer2022/BuildAndroid/AndroidApk9.apk
+  playerPath: C:/Users/fatim/Documents/GitHub/MSGameJamSummer2022/BuildAndroid/AndroidApk10.apk

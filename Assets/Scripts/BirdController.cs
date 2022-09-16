@@ -25,6 +25,8 @@ public class BirdController : MonoBehaviour
     public int NumberOfPebbles;
     public Text pebbletext;
     public Text outOFPebbbles;
+
+    public GameObject Wall;
     // Update is called once per frame
     void Start()
     {
@@ -32,9 +34,13 @@ public class BirdController : MonoBehaviour
         isPressed = isBallThrown = false;
         lineRenderer.enabled = false;
 
-        if (LevelSelector.selectedLevel <= 7)
+        if (LevelSelector.selectedLevel <= 5)
         { NumberOfPebbles = LevelSelector.selectedLevel + 5; }
-        else NumberOfPebbles = 5;
+        else 
+        { NumberOfPebbles = 10; }
+
+        if (LevelSelector.selectedLevel >= 8) Wall.SetActive(true);
+
         pebbletext.text = "PEBBLES: " + NumberOfPebbles.ToString();
     }
 

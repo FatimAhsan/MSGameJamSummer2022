@@ -15,6 +15,7 @@ public class PersonMovement : MonoBehaviour
     public float speed = 5;
 
     public Transform FoodPosition;
+    public Transform HelmetPosition;
 
     public Sequence sequenceEnter;//public as used in FoodCollison
     public Sequence sequenceLookAtScreen;//public as used in FoodCollison
@@ -27,10 +28,12 @@ public class PersonMovement : MonoBehaviour
     public GameObject Pizza;
     public GameObject Shake;
     private GameObject SpawnedFood;
+    public GameObject helmetObj;
 
     Transform child;
     public GameObject childObj;
     public GameObject childRunObj;
+    private GameObject Helmet = null;
 
     public bool isHit = false;
     public bool isDirectionRight; //public as used in FoodCollison
@@ -57,6 +60,17 @@ public class PersonMovement : MonoBehaviour
         else
             SpawnedFood = (GameObject)Instantiate(Shake, FoodPosition.transform.position, Shake.transform.rotation);
 
+
+        if(LevelSelector.selectedLevel >= 4)
+        {
+            randomNumber = Mathf.RoundToInt(Random.Range(0f, 1f));
+            if (randomNumber == 1)
+            {
+                Helmet = (GameObject)Instantiate(helmetObj, HelmetPosition.transform.position, transform.rotation);
+
+                Helmet.transform.parent = gameObject.transform;
+            }
+        }
         SpawnedFood.transform.parent = gameObject.transform;
 
         child = childObj.transform;
@@ -85,9 +99,15 @@ public class PersonMovement : MonoBehaviour
         //
         if (collision.gameObject.layer == 6)
         {
-            isHit = true;
+
             GetComponent<AudioSource>().Play();
-            this.LookAtScreenAndRun();
+            if (Helmet == null)
+            { isHit = true; this.LookAtScreenAndRun(); }
+            else
+            {
+                Destroy(Helmet);
+                Helmet = null;
+            }
            
         }    
     }
